@@ -1,0 +1,20 @@
+{
+  "name": "moneyflow",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Professional, modular, and extensible personal finance management system",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n \"api,web\" -c \"blue,green\" \"npm run dev -w @moneyflow/api\" \"npm run dev -w @moneyflow/web\"",
+    "build": "npm run build -w @moneyflow/shared && npm run build -w @moneyflow/api && npm run build -w @moneyflow/web",
+    "test": "npm run test -w @moneyflow/shared && npm run test -w @moneyflow/api && npm run test -w @moneyflow/web",
+    "typecheck": "npm run typecheck -w @moneyflow/shared && npm run typecheck -w @moneyflow/api && npm run typecheck -w @moneyflow/web"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "typescript": "^5.7.3"
+  }
+}
