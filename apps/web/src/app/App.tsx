@@ -82,8 +82,9 @@ export function App() {
           <div className="flex items-center gap-3">
             {/* Theme Toggle Button */}
             <button
+              id="theme-toggle-btn"
               onClick={toggleTheme}
-              className="p-2 rounded-lg border border-border-subtle hover:bg-surface text-text-secondary hover:text-text-primary transition-colors"
+              className="p-2 rounded-lg border border-border-subtle hover:bg-surface text-text-secondary hover:text-text-primary transition-colors cursor-pointer"
               title="Toggle theme"
             >
               {isDark ? <Sun className="w-5 h-5 text-amber-400" /> : <Moon className="w-5 h-5 text-slate-600" />}
